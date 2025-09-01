@@ -46,6 +46,55 @@ body {
     color: white;
 }
 
+#home {
+    background-color: transparent;
+    height: 100vh;
+    position: fixed;
+    margin-top: -100vh;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#about {
+    background-color: transparent;
+    height: 100vh;
+    position: fixed;
+    margin-top: -100vh;
+    margin-left: calc(100vw - 100px);
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#home_item {
+    transform: rotate(-90deg);
+}
+
+#about_item {
+    transform: rotate(90deg);
+}
+
+.menu_item {
+    width: 100px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.menu_item:visited {
+    color: #7f7f7f;
+    text-decoration: none;
+}
+
+.menu_item:link {
+    color: #7f7f7f;
+    text-decoration: none;
+}
+
 #links {
     height: 100px;
     z-index: 2;
@@ -100,10 +149,10 @@ ul li:hover {
     text-shadow: 0 0 15px #8351ed;
 }
 
-a:visited {
+.icon:visited {
     color: white;
 }
 
-a:link {
+.icon:link {
     color: white;
 }

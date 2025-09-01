@@ -166,7 +166,7 @@ ul li {
     font-size: 30px;
     height: 60px;
     width: 60px;
-    color: #7f7f7f;
+    color: white;
     background: #171515;
     line-height: 60px;
     border-radius: 50%;
@@ -200,11 +200,11 @@ ul li:hover {
 }
 
 a:visited {
-    color: #7f7f7f;
+    color: white;
 }
 
 a:link {
-    color: #7f7f7f;
+    color: white;
 }
 
 #scroll{
