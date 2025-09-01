@@ -18,13 +18,10 @@ body {
                     #210f3f);
 }
 
-<<<<<<< HEAD
 ::-webkit-scrollbar {
     display: none;
 }
 
-=======
->>>>>>> 92d77ecc8a58c76504d3c9e603d57a446649d494
 #home {
     height: 100vh;
     display: flex;
@@ -49,11 +46,7 @@ body {
 .heading {
     font-family: 'Montserrat ExtraLight', sans-serif;
     font-size: 36px;
-<<<<<<< HEAD
     color: white;
-=======
-    color: #7f7f7f;
->>>>>>> 92d77ecc8a58c76504d3c9e603d57a446649d494
     transition: .3s;
     margin-inline: -160px;
     opacity: 0;
@@ -125,11 +118,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 20%;
-<<<<<<< HEAD
     font-family: 'Montserrat Light', sans-serif;
-=======
-    font-family: 'Roboto Thin', sans-serif;
->>>>>>> 92d77ecc8a58c76504d3c9e603d57a446649d494
     font-size: 30px;
     font-weight: 200;
 }
