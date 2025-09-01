@@ -46,7 +46,7 @@ body {
 .heading {
     font-family: 'Montserrat ExtraLight', sans-serif;
     font-size: 36px;
-    color: #7f7f7f;
+    color: white;
     transition: .3s;
     margin-inline: -160px;
     opacity: 0;
@@ -118,7 +118,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 20%;
-    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'Montserrat Light', sans-serif;
     font-size: 30px;
     font-weight: 200;
 }
