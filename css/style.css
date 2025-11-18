@@ -84,8 +84,8 @@ body {
     position: absolute;
     width: 100%;
     height: 200%;
-    -webkit-mask-image: url('assets/triangle.svg');
-    mask-image: url('assets/triangle.svg');
+    -webkit-mask-image: url('../assets/triangle.svg');
+    mask-image: url('../assets/triangle.svg');
     mask-type: alpha;
     -webkit-mask-composite: source-over;
     mask-composite: add;
