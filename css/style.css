@@ -3,5 +3,10 @@ body{
 }
 
 #board{
-    background-color: black;
+    background-image: url("../assets/environment/Home.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
