@@ -1,9 +1,9 @@
 body{
     text-align: center;
+    background-color: black;
 }
 
 #board{
-    background-image: url("../assets/environment/Home.png");
     background-repeat: no-repeat;
     background-size: cover;
     image-rendering: pixelated;

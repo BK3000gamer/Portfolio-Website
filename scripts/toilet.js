@@ -47,17 +47,17 @@ const tilemap = [
     "                    ",
     "                    ",
     "                    ",
-    "      XXXXXXXX      ",
-    "     X    P   X     ",
-    "     XX  XXXE X     ",
-    "      X X   DX      ",
-    "       X            ",
     "                    ",
+    "                    ",
+    "           XDX      ",
+    "          X P X     ",
+    "          X   X     ",
+    "           XXX      ",
     "                    "
 ]
 const walls = new Set();
 const doors = new Set();
-const doorUrls = ['pages/toilet.html']
+const doorUrls = ['../index.html']
 
 //update frames
 let lastTime = 0;
@@ -97,32 +97,32 @@ function loadImages() {
     //load run animations
     for (let i = 1; i < 5; i++) {
         let runSouthAnimationFrame = new Image();
-        runSouthAnimationFrame.src = `assets/character/Character${i}.png`;
+        runSouthAnimationFrame.src = `../assets/character/Character${i}.png`;
         runSouthAnimationFrames.push(runSouthAnimationFrame);
     }
 
     for (let i = 5; i < 9; i++) {
         let runNorthAnimationFrame = new Image();
-        runNorthAnimationFrame.src = `assets/character/Character${i}.png`;
+        runNorthAnimationFrame.src = `../assets/character/Character${i}.png`;
         runNorthAnimationFrames.push(runNorthAnimationFrame);
     }
 
     for (let i = 9; i < 11; i++) {
         let runWestAnimationFrame = new Image();
-        runWestAnimationFrame.src = `assets/character/Character${i}.png`;
+        runWestAnimationFrame.src = `../assets/character/Character${i}.png`;
         runWestAnimationFrames.push(runWestAnimationFrame);
     }
 
     for (let i = 11; i < 13; i++) {
         let runEastAnimationFrame = new Image();
-        runEastAnimationFrame.src = `assets/character/Character${i}.png`;
+        runEastAnimationFrame.src = `../assets/character/Character${i}.png`;
         runEastAnimationFrames.push(runEastAnimationFrame);
     }
 
-    idleSouthAnimationFrame.src = 'assets/character/Character2.png'
-    idleNorthAnimationFrame.src = 'assets/character/Character6.png'
-    idleWestAnimationFrame.src = 'assets/character/Character10.png'
-    idleEastAnimationFrame.src = 'assets/character/Character12.png'
+    idleSouthAnimationFrame.src = '../assets/character/Character2.png'
+    idleNorthAnimationFrame.src = '../assets/character/Character6.png'
+    idleWestAnimationFrame.src = '../assets/character/Character10.png'
+    idleEastAnimationFrame.src = '../assets/character/Character12.png'
     idleAnimationFrames.push(idleSouthAnimationFrame);
 }
 
@@ -146,17 +146,8 @@ function loadMap() {
                 const door = new Door(x, y, tileSize, tileSize)
                 doors.add(door);
             }
-            else if (tilemapChar === 'E') {
-                if (document.referrer === 'http://localhost:63342/Website/pages/toilet.html') {
-                    idleAnimationFrames[0] = idleNorthAnimationFrame;
-                    player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'N');
-                    console.log(player.lastDirection)
-                }
-            }
             else if (tilemapChar === 'P') {
-                if (player == null) {
-                    player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'S');
-                }
+                player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'S');
             }
         }
     }
