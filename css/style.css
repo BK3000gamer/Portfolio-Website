@@ -1,12 +1,45 @@
-body{
+body {
     text-align: center;
-    background-color: black;
+    background-color: grey;
 }
 
-#board{
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
     background-repeat: no-repeat;
     background-size: cover;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+}
+
+.map {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+#map_inner {
+    background-color: white;
 }

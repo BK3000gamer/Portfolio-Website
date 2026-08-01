@@ -7,6 +7,13 @@ const boardWidth = colCount * tileSize;
 const boardHeight = rowCount * tileSize;
 let context;
 
+//map
+let mapContainer;
+let mapMenu;
+const mapWidth = (colCount - 4) * tileSize;
+const mapHeight = (rowCount - 4) * tileSize;
+let mapOpened = false;
+
 //animations
 let runSouthAnimationFrames = []
 let runNorthAnimationFrames = []
@@ -57,6 +64,7 @@ const tilemap = [
 ]
 const walls = new Set();
 const doors = new Set();
+const maps = new Set();
 const doorUrls = ['../index.html']
 
 //update frames
@@ -67,6 +75,12 @@ window.onload = function () {
     board = document.getElementById("board");
     board.height = boardHeight;
     board.width = boardWidth;
+
+    mapMenu = document.getElementById("map_inner");
+    mapContainer = document.getElementById("map")
+    mapMenu.height = mapHeight;
+    mapMenu.width = mapWidth;
+
     context = board.getContext("2d");
 
     context.imageSmoothingEnabled = false;
@@ -80,6 +94,7 @@ window.onload = function () {
     requestAnimationFrame(update);
     document.addEventListener("keydown", movePlayer);
     document.addEventListener("keyup", stopPlayer);
+    document.addEventListener("keydown", openMap);
 }
 
 function resizeBoard() {
@@ -91,6 +106,9 @@ function resizeBoard() {
 
     board.style.width = boardWidth * finalScale + "px";
     board.style.height = boardHeight * finalScale + "px";
+
+    mapMenu.style.width = mapWidth * finalScale + "px";
+    mapMenu.style.height = mapHeight * finalScale + "px";
 }
 
 function loadImages() {
@@ -129,6 +147,7 @@ function loadImages() {
 function loadMap() {
     walls.clear();
     doors.clear();
+    maps.clear();
 
     for (let r = 0; r < rowCount; r++) {
         for (let c = 0; c < colCount; c++) {
@@ -317,6 +336,18 @@ function applyDirection(direction) {
     runAnimationIndex = 0;
 }
 
+function openMap(e) {
+    if (e.code === "Escape") {
+        if (mapOpened) {
+            mapContainer.classList.remove('open');
+        }
+        else {
+            mapContainer.classList.add('open');
+        }
+        mapOpened = !mapOpened;
+    }
+}
+
 class Block {
     constructor(x, y, width, height) {
         this.x = x;
@@ -333,6 +364,15 @@ class Door {
         this.width = width;
         this.height = height;
         this.url = url;
+    }
+}
+
+class Map {
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
 }
 
