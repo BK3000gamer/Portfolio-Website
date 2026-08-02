@@ -53,13 +53,13 @@ const tilemap = [
     "                    ",
     "                    ",
     "                    ",
+    "    XX              ",
+    "   X  X             ",
+    "   X  X             ",
+    "   X  PD            ",
+    "    XXX             ",
     "                    ",
     "                    ",
-    "                    ",
-    "            D       ",
-    "           XPX      ",
-    "           X X      ",
-    "            X       ",
     "                    "
 ]
 const walls = new Set();
@@ -141,7 +141,7 @@ function loadImages() {
     idleNorthAnimationFrame.src = '../assets/character/Character6.png'
     idleWestAnimationFrame.src = '../assets/character/Character10.png'
     idleEastAnimationFrame.src = '../assets/character/Character12.png'
-    idleAnimationFrames.push(idleSouthAnimationFrame);
+    idleAnimationFrames.push(idleWestAnimationFrame);
 }
 
 function loadMap() {
@@ -166,7 +166,7 @@ function loadMap() {
                 doors.add(door);
             }
             else if (tilemapChar === 'P') {
-                player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'S');
+                player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'W');
             }
         }
     }

@@ -56,7 +56,7 @@ const tilemap = [
     "                    ",
     "      XXXXXXXX      ",
     "     X    P   M     ",
-    "     XX  XXXE X     ",
+    "      DB XXXA X     ",
     "      X X   DX      ",
     "       X            ",
     "                    ",
@@ -65,7 +65,7 @@ const tilemap = [
 const walls = new Set();
 const doors = new Set();
 const maps = new Set();
-const doorUrls = ['pages/toilet.html']
+const doorUrls = ['pages/balcony.html', 'pages/toilet.html']
 
 //update frames
 let lastTime = 0;
@@ -165,10 +165,17 @@ function loadMap() {
                 const door = new Door(x, y, tileSize, tileSize)
                 doors.add(door);
             }
-            else if (tilemapChar === 'E') {
+            else if (tilemapChar === 'A') {
                 if (document.referrer === 'http://localhost:63342/Website/pages/toilet.html') {
                     idleAnimationFrames[0] = idleNorthAnimationFrame;
                     player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'N');
+                    console.log(player.lastDirection)
+                }
+            }
+            else if (tilemapChar === 'B') {
+                if (document.referrer === 'http://localhost:63342/Website/pages/balcony.html') {
+                    idleAnimationFrames[0] = idleEastAnimationFrame;
+                    player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'E');
                     console.log(player.lastDirection)
                 }
             }
@@ -216,6 +223,13 @@ function move(delta) {
 
     player.x += player.velocityX !== 0 ? Math.sign(player.velocityX) * distance : 0;
     player.y += player.velocityY !== 0 ? Math.sign(player.velocityY) * distance : 0;
+
+    if (mapOpened) {
+        player.x = Math.round(player.x / tileSize) * tileSize;
+        player.y = Math.round(player.y / tileSize) * tileSize;
+        player.velocityX = 0;
+        player.velocityY = 0;
+    }
 
     if (player.velocityX !== 0) {
         const targetX = player.x + Math.sign(player.velocityX) * distance;
