@@ -166,14 +166,14 @@ function loadMap() {
                 doors.add(door);
             }
             else if (tilemapChar === 'A') {
-                if (document.referrer === 'http://localhost:63342/Website/pages/toilet.html') {
+                if (document.referrer === 'http://localhost:63342/Website/pages/toilet.html' || document.referrer === 'https://bk3000gamer.github.io/Portfolio-Website/pages/toilet.html') {
                     idleAnimationFrames[0] = idleNorthAnimationFrame;
                     player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'N');
                     console.log(player.lastDirection)
                 }
             }
             else if (tilemapChar === 'B') {
-                if (document.referrer === 'http://localhost:63342/Website/pages/balcony.html') {
+                if (document.referrer === 'http://localhost:63342/Website/pages/balcony.html' || document.referrer === 'https://bk3000gamer.github.io/Portfolio-Website/pages/balcony.html') {
                     idleAnimationFrames[0] = idleEastAnimationFrame;
                     player = new Character(idleAnimationFrames[0], x, y, tileSize, tileSize, 'E');
                     console.log(player.lastDirection)
