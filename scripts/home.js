@@ -15,7 +15,7 @@ const tilemap = [
 const walls = new Set();
 const doors = new Set();
 const maps = new Set();
-const doorUrls = ['pages/balcony.html', 'pages/toilet.html']
+const doorUrls = ['balcony.html', 'toilet.html']
 
 function loadMap() {
     walls.clear();
