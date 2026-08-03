@@ -4,8 +4,6 @@ let canvas = document.getElementById("board");
 
 let newX = 0, newY = 0, startX = 0, startY = 0;
 
-let fScale
-
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
         console.log('resize fired', entry.contentRect.width, entry.contentRect.height);
