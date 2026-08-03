@@ -41,5 +41,27 @@ body {
 }
 
 #map_inner {
+    position: relative;
     background-color: white;
+    border-radius: 2vw;
+    overflow: hidden;
+}
+
+#drag_container {
+    position: absolute;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    background-image: url("../assets/environment/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#phone {
+    position: absolute;
+    display: flex;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    pointer-events: none;
 }
