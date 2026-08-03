@@ -52,8 +52,6 @@ const movementKeys = ["ArrowUp", "KeyW", "ArrowDown", "KeyS", "ArrowLeft", "KeyA
 let lastTime = 0;
 let animAccumulator = 0;
 
-const basePath = "/Portfolio-Website"
-
 window.onload = function () {
     board = document.getElementById("board");
     board.height = boardHeight;
@@ -98,31 +96,31 @@ function loadImages() {
     //load run animations
     for (let i = 1; i < 5; i++) {
         let runSouthAnimationFrame = new Image();
-        runSouthAnimationFrame.src = `${basePath}/assets/character/Character${i}.png`;
+        runSouthAnimationFrame.src = `/assets/character/Character${i}.png`;
         runSouthAnimationFrames.push(runSouthAnimationFrame);
     }
 
     for (let i = 5; i < 9; i++) {
         let runNorthAnimationFrame = new Image();
-        runNorthAnimationFrame.src = `${basePath}/assets/character/Character${i}.png`;
+        runNorthAnimationFrame.src = `/assets/character/Character${i}.png`;
         runNorthAnimationFrames.push(runNorthAnimationFrame);
     }
 
     for (let i = 9; i < 11; i++) {
         let runWestAnimationFrame = new Image();
-        runWestAnimationFrame.src = `${basePath}/assets/character/Character${i}.png`;
+        runWestAnimationFrame.src = `/assets/character/Character${i}.png`;
         runWestAnimationFrames.push(runWestAnimationFrame);
     }
 
     for (let i = 11; i < 13; i++) {
         let runEastAnimationFrame = new Image();
-        runEastAnimationFrame.src = `${basePath}/assets/character/Character${i}.png`;
+        runEastAnimationFrame.src = `/assets/character/Character${i}.png`;
         runEastAnimationFrames.push(runEastAnimationFrame);
     }
 
-    idleSouthAnimationFrame.src = `${basePath}/assets/character/Character2.png`
-    idleNorthAnimationFrame.src = `${basePath}/assets/character/Character6.png`
-    idleWestAnimationFrame.src = `${basePath}/assets/character/Character10.png`
-    idleEastAnimationFrame.src = `${basePath}/assets/character/Character12.png`
+    idleSouthAnimationFrame.src = `/assets/character/Character2.png`
+    idleNorthAnimationFrame.src = `/assets/character/Character6.png`
+    idleWestAnimationFrame.src = `/assets/character/Character10.png`
+    idleEastAnimationFrame.src = `/assets/character/Character12.png`
     idleAnimationFrames.push(idleSouthAnimationFrame);
 }
