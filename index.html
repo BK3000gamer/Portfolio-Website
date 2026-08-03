@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <base href="/Portfolio-Website/">
+        <script>
+            document.write('<base href="' +
+                (location.hostname.endsWith('github.io') ? '/Portfolio-Website/' : '/') +
+                '">');
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>

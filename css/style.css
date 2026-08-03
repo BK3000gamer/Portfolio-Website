@@ -52,7 +52,7 @@ body {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    background-image: url("/assets/environment/map.png");
+    background-image: url("assets/environment/map.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
