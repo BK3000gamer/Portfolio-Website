@@ -20,13 +20,30 @@
             <canvas id="board"></canvas>
             <div id="content">
                 <div class="text" id="projects">
-                    <h1 class="normal"><span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
+                    <script>
+                        function openMenu() {
+                            if (mapOpened) {
+                                mapContainer.classList.remove('open');
+                            }
+                            else {
+                                mapContainer.classList.add('open');
+                            }
+                            mapOpened = !mapOpened;
+                        }
+                    </script>
+                    <a href="#" onclick="openMenu()">   
+                        <h1 class="normal"><span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
+                    </a>
                 </div>
                 <div class="text" id="contacts">
-                    <h1 class="normal"><span class="highlight">CONTACT</span><br>← ME HERE</h1>
+                    <a href="balcony.html">
+                        <h1 class="normal"><span class="highlight">CONTACT</span><br>← ME HERE</h1>
+                    </a>
                 </div>
                 <div class="text" id="about">
-                    <h1 class="normal"><span class="highlight">ABOUT ME</span> WHO <br>IS THIS GUY ↓</h1>
+                    <a href="toilet.html">
+                        <h1 class="normal"><span class="highlight">ABOUT ME</span> WHO <br>IS THIS GUY ↓</h1>
+                    </a>
                 </div>
             </div>
         </div>
