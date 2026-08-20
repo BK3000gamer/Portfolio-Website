@@ -57,8 +57,8 @@ window.onload = function () {
     board.height = boardHeight;
     board.width = boardWidth;
 
-    mapMenu = document.getElementById("map_inner");
-    mapContainer = document.getElementById("map")
+    mapMenu = document.getElementById("menu_content");
+    mapContainer = document.getElementById("menu")
     mapMenu.height = mapHeight;
     mapMenu.width = mapWidth;
 

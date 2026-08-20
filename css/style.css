@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: grey;
+    background-color: black;
 }
 
 .container {
@@ -22,7 +22,57 @@ body {
     image-rendering: crisp-edges;
 }
 
-.map {
+#content {
+    position: fixed;
+}
+
+.text {
+    position: relative;
+    font-family: Montserrat;
+    line-height: 210%;
+    font-weight: 900;
+}
+
+#projects {
+    height: 9.09%;
+    width: 20%;
+    top: 45.45% !important;
+    left: 70%;
+    text-align: left;
+}
+
+#contacts {
+    height: 9.09%;
+    width: 15%;
+    top: 45.45% !important;
+    left: 20%;
+    text-align: right;
+}
+
+#about {
+    height: 9.09%;
+    width: 25%;
+    top: 45.45% !important;
+    left: 55%;
+    text-align: left;
+}
+
+h1 {
+    margin-top: 1%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.highlight {
+    color: mediumpurple;
+}
+
+.normal {
+    color: white;
+}
+
+.menu {
     position: fixed;
     opacity: 0;
     top: 0;
@@ -35,30 +85,20 @@ body {
     align-items: center;
 }
 
-.map.open {
+.menu.open {
     opacity: 1;
     z-index: 999;
 }
 
-#map_inner {
+#menu_content {
     position: relative;
-    background-color: white;
-    border-radius: 2vw;
+    background-color: transparent;
     overflow: hidden;
-}
-
-#drag_container {
-    position: absolute;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    background-image: url("../assets/environment/map.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    z-index: 1;
 }
 
 #phone {
-    position: absolute;
+    position: fixed;
     display: flex;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;

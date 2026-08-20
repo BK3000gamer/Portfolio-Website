@@ -8,7 +8,7 @@
         <script src="scripts/init.js"></script>
         <script src="scripts/home.js" defer></script>
         <script src="scripts/main.js" defer></script>
-        <script src="scripts/map.js" defer></script>
+        <script src="scripts/menu.js" defer></script>
         <style>
             #board {
                 background-image: url("assets/environment/home.png");
@@ -18,12 +18,21 @@
     <body>
         <div class="container">
             <canvas id="board"></canvas>
+            <div id="content">
+                <div class="text" id="projects">
+                    <h1 class="normal"><span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
+                </div>
+                <div class="text" id="contacts">
+                    <h1 class="normal"><span class="highlight">CONTACT</span><br>← ME HERE</h1>
+                </div>
+                <div class="text" id="about">
+                    <h1 class="normal"><span class="highlight">ABOUT ME</span> WHO <br>IS THIS GUY ↓</h1>
+                </div>
+            </div>
         </div>
 
-        <div class="map" id="map">
-            <div id="map_inner">
-                <div id="drag_container"></div>
-            </div>
+        <div class="menu" id="menu">
+            <div id="menu_content"></div>
             <img id="phone" alt="phone" src="assets/environment/phone.png" draggable="false"/>
         </div>
     </body>
