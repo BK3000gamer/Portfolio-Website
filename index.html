@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/d10eba1199.js" crossorigin="anonymous"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/home.js" defer></script>
         <script src="scripts/main.js" defer></script>
@@ -14,25 +15,25 @@
                 background-image: url("assets/environment/home.png");
             }
         </style>
+        <script>
+            function openMenu() {
+                if (mapOpened) {
+                    mapContainer.classList.remove('open');
+                }
+                else {
+                    mapContainer.classList.add('open');
+                }
+                mapOpened = !mapOpened;
+            }
+        </script>
     </head>
     <body>
         <div class="container">
             <canvas id="board"></canvas>
             <div id="content">
                 <div class="text" id="projects">
-                    <script>
-                        function openMenu() {
-                            if (mapOpened) {
-                                mapContainer.classList.remove('open');
-                            }
-                            else {
-                                mapContainer.classList.add('open');
-                            }
-                            mapOpened = !mapOpened;
-                        }
-                    </script>
-                    <a href="#" onclick="openMenu()">   
-                        <h1 class="normal"><span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
+                    <a href="#" onclick="openMenu()">
+                        <h1 class="normal">MY <span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
                     </a>
                 </div>
                 <div class="text" id="contacts">
@@ -42,14 +43,32 @@
                 </div>
                 <div class="text" id="about">
                     <a href="toilet.html">
-                        <h1 class="normal"><span class="highlight">ABOUT ME</span> WHO <br>IS THIS GUY ↓</h1>
+                        <h1 class="normal"><span class="highlight">ABOUT</span> ME AND WHAT I DO ↓</h1>
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="menu" id="menu">
-            <div id="menu_content"></div>
+            <div id="menu_content">
+                <br>
+                <div class="profile">
+                    <a onclick="openMenu()" class="profile-item"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="toilet.html" class="profile-item" id="name">Khoi Hoang</a>
+                    <a href="balcony.html" class="profile-item"><i class="fa-solid fa-phone"></i></a>
+                    <a href="index.html" class="profile-item"><i class="fa-regular fa-house"></i></a>
+                </div>
+                <h3 class="time">12:11</h3>
+                <div class="messages">
+                    <a href="#">
+                        <h2 class="menu_item">Undergrad Portfolio</h2>
+                    </a>
+                    <a href="#">
+                        <h2 class="menu_item">Personal Projects</h2>
+                    </a>
+                </div>
+                <h3 class="time">15:34</h3>
+            </div>
             <img id="phone" alt="phone" src="assets/environment/phone.png" draggable="false"/>
         </div>
     </body>

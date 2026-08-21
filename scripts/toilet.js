@@ -17,6 +17,8 @@ const doors = new Set();
 const maps = new Set();
 const doorUrls = ['index.html']
 
+let canvas = document.getElementById("board");
+
 function loadMap() {
     walls.clear();
     doors.clear();

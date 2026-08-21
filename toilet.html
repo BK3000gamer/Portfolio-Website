@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Toilet</title>
+        <title>About</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/d10eba1199.js" crossorigin="anonymous"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/toilet.js" defer></script>
         <script src="scripts/main.js" defer></script>
@@ -14,14 +15,44 @@
                 background-image: url("assets/environment/toilet.png");
             }
         </style>
+        <script>
+            function openMenu() {
+                if (mapOpened) {
+                    mapContainer.classList.remove('open');
+                }
+                else {
+                    mapContainer.classList.add('open');
+                }
+                mapOpened = !mapOpened;
+            }
+        </script>
     </head>
     <body>
         <div class="container">
             <canvas id="board"></canvas>
+            <div id="content"></div>
         </div>
 
         <div class="menu" id="menu">
-            <div id="menu_content"></div>
+            <div id="menu_content">
+                <br>
+                <div class="profile">
+                    <a onclick="openMenu()" class="profile-item"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="toilet.html" class="profile-item" id="name">Khoi Hoang</a>
+                    <a href="balcony.html" class="profile-item"><i class="fa-solid fa-phone"></i></a>
+                    <a href="index.html" class="profile-item"><i class="fa-regular fa-house"></i></a>
+                </div>
+                <h3 class="time">12:11</h3>
+                <div class="messages">
+                    <a href="#">
+                        <h2 class="menu_item">Undergrad Portfolio</h2>
+                    </a>
+                    <a href="#">
+                        <h2 class="menu_item">Personal Projects</h2>
+                    </a>
+                </div>
+                <h3 class="time">15:34</h3>
+            </div>
             <img id="phone" alt="phone" src="assets/environment/phone.png" draggable="false"/>
         </div>
     </body>

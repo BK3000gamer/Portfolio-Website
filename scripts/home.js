@@ -17,6 +17,21 @@ const doors = new Set();
 const maps = new Set();
 const doorUrls = ['balcony.html', 'toilet.html']
 
+let canvas = document.getElementById("board");
+let projects = document.getElementById("projects");
+let contacts = document.getElementById("contacts");
+let about = document.getElementById("about");
+
+const resizeObserver = new ResizeObserver(entries => {
+    for (let entry of entries) {
+        projects.style.fontSize = `${entry.contentRect.height/50}px`;
+        contacts.style.fontSize = `${entry.contentRect.height/50}px`;
+        about.style.fontSize = `${entry.contentRect.height/50}px`;
+    }
+})
+
+resizeObserver.observe(canvas);
+
 function loadMap() {
     walls.clear();
     doors.clear();
