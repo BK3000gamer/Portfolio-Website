@@ -151,15 +151,11 @@ a {
     font-family: Montserrat;
     font-weight: 300;
     color: white;
-    background: linear-gradient(mediumpurple, darkslateblue) no-repeat center;
+    background: linear-gradient(mediumpurple, midnightblue) no-repeat center;
     background-attachment: fixed;
     border-radius: 6cqw 2cqw 2cqw 6cqw;
     padding: 3cqw 4cqw;
-    margin: 0.5cqw 5cqw;
-}
-
-.menu_item:hover {
-    margin: 0.5cqw 15cqw;
+    margin: 0.5cqw 3cqw;
 }
 
 .time {
