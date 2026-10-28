@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d10eba1199.js" crossorigin="anonymous"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/home.js" defer></script>
@@ -31,17 +34,20 @@
         <div class="container">
             <canvas id="board"></canvas>
             <div id="content">
-                <div class="text" id="projects">
+                <div class="heading1" id="intro">
+                    <h1 class="normal">Hi! My name is <span class="highlight"> Khoi Hoang</span></h1>
+                </div>
+                <div class="heading1" id="projects">
                     <a href="#" onclick="openMenu()">
                         <h1 class="normal">MY <span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
                     </a>
                 </div>
-                <div class="text" id="contacts">
+                <div class="heading1" id="contacts">
                     <a href="balcony.html">
                         <h1 class="normal"><span class="highlight">CONTACT</span><br>← ME HERE</h1>
                     </a>
                 </div>
-                <div class="text" id="about">
+                <div class="heading1" id="about">
                     <a href="toilet.html">
                         <h1 class="normal"><span class="highlight">ABOUT</span> ME AND WHAT I DO ↓</h1>
                     </a>
@@ -73,7 +79,10 @@
                         <h2 class="menu_item">Game Development</h2>
                     </a>
                     <a href="#">
-                        <h2 class="menu_item">Animation</h2>
+                        <h2 class="menu_item">2D Animation</h2>
+                    </a>
+                    <a href="#">
+                        <h2 class="menu_item">3D Animation</h2>
                     </a>
                     <a href="#">
                         <h2 class="menu_item">Graphic Design</h2>

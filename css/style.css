@@ -24,18 +24,27 @@ body {
 
 #content {
     position: fixed;
+    container-type: inline-size;
 }
 
-.text {
+.heading1 {
     position: relative;
     font-family: Montserrat;
     line-height: 210%;
 }
 
+#intro {
+    height: 18.18%;
+    width: 50%;
+    top: 9.09% !important;
+    left: 25%;
+    text-align: left;
+}
+
 #projects {
     height: 9.09%;
     width: 20%;
-    top: 45.45% !important;
+    top: 27.27% !important;
     left: 70%;
     text-align: left;
 }
@@ -43,7 +52,7 @@ body {
 #contacts {
     height: 9.09%;
     width: 15%;
-    top: 45.45% !important;
+    top: 27.27% !important;
     left: 20%;
     text-align: right;
 }
@@ -51,7 +60,7 @@ body {
 #about {
     height: 9.09%;
     width: 20%;
-    top: 45.45% !important;
+    top: 27.27% !important;
     left: 55%;
     text-align: left;
 }
@@ -68,10 +77,10 @@ a {
 .normal {
     color: white;
     font-weight: 700;
-    margin-top: 1%;
+    margin-top: 0.1cqw;
     margin-bottom: 0;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 0.2cqw;
+    margin-right: 0.2cqw;
 }
 
 .menu {
@@ -148,10 +157,11 @@ a {
 
 .menu_item {
     text-align: right;
+    text-transform: uppercase;
     font-family: Montserrat;
     font-weight: 300;
     color: white;
-    background: linear-gradient(mediumpurple, midnightblue) no-repeat center;
+    background-color: black;
     background-attachment: fixed;
     border-radius: 6cqw 2cqw 2cqw 6cqw;
     padding: 3cqw 4cqw;

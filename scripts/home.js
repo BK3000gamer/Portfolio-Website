@@ -21,12 +21,14 @@ let canvas = document.getElementById("board");
 let projects = document.getElementById("projects");
 let contacts = document.getElementById("contacts");
 let about = document.getElementById("about");
+let intro = document.getElementById("intro");
 
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
         projects.style.fontSize = `${entry.contentRect.height/50}px`;
         contacts.style.fontSize = `${entry.contentRect.height/50}px`;
         about.style.fontSize = `${entry.contentRect.height/50}px`;
+        intro.style.fontSize = `${entry.contentRect.height/50}px`;
     }
 })
 
