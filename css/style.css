@@ -37,6 +37,19 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li::marker {
+    content: "✦  "
+}
+
 .highlight {
     color: mediumpurple;
     font-weight: 800;

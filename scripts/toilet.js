@@ -19,10 +19,12 @@ const doorUrls = ['index.html']
 
 let canvas = document.getElementById("board");
 let back = document.getElementById("back");
+let bio = document.getElementById("bio");
 
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
         back.style.fontSize = `${entry.contentRect.height/50}px`;
+        bio.style.fontSize = `${entry.contentRect.height/75}px`;
     }
 })
 

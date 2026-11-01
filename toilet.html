@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d10eba1199.js" crossorigin="anonymous"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/toilet.js" defer></script>
@@ -21,6 +24,26 @@
                 top: 45.45% !important;
                 left: 60%;
                 text-align: left;
+            }
+
+            #profile {
+                position: relative;
+                height: 18.18%;
+                width: 10%;
+                top: 18.18% !important;
+                left: 10%;
+            }
+
+            #bio {
+                position: relative;
+                height: 18.18%;
+                width: 25%;
+                top: 0;
+                left: 25%;
+                text-align: justify;
+                font-family: Montserrat;
+                font-weight: normal;
+                color: white
             }
         </style>
         <script>
@@ -43,6 +66,18 @@
                     <a href="index.html">
                         <h1 class="normal">BACK <span class="highlight">HOME</span> ↑</h1>
                     </a>
+                </div>
+                <div id="profile">
+                    <img src="assets/6323-izumi-miyamura.jpg" alt="profile picture" height=100% width=100% style="border-radius: 50%; border-style: solid; border-color: mediumpurple; box-sizing: border-box;">
+                </div>
+                <div id="bio">
+                    <ul>
+                        <li>I am a Game Developer, Animator and Designer based in Melbourne.</li><br>
+                        <li>I'm currently a Game/Animation student at Swinburne University of Technology.</li><br>
+                        <li>My main engine is Godot, but I also know C#, C++ and JavaScript, and can pick up other engines quickly.</li><br>
+                        <li>I am proficient in pixel art, 2D and 3D animations, and can adapt to different art styles.</li><br>
+                        <li>I sometimes do cosplay photography as a hobby.</li>
+                    </ul>
                 </div>
             </div>
         </div>
