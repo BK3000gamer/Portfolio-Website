@@ -9,5 +9,5 @@ My personal corner of the Internet
 
 ## Keybinds
 
-- [W] [A] [S] [D]: Move
-- [ESC]: Menu
+- [W] [A] [S] [D] : Move
+- [ESC] : Menu
