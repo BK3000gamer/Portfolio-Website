@@ -33,38 +33,6 @@ body {
     line-height: 210%;
 }
 
-#intro {
-    height: 18.18%;
-    width: 50%;
-    top: 9.09% !important;
-    left: 25%;
-    text-align: left;
-}
-
-#projects {
-    height: 9.09%;
-    width: 20%;
-    top: 27.27% !important;
-    left: 70%;
-    text-align: left;
-}
-
-#contacts {
-    height: 9.09%;
-    width: 15%;
-    top: 27.27% !important;
-    left: 20%;
-    text-align: right;
-}
-
-#about {
-    height: 9.09%;
-    width: 20%;
-    top: 27.27% !important;
-    left: 55%;
-    text-align: left;
-}
-
 a {
     text-decoration: none;
 }
@@ -166,6 +134,10 @@ a {
     border-radius: 6cqw 2cqw 2cqw 6cqw;
     padding: 3cqw 4cqw;
     margin: 0.5cqw 3cqw;
+}
+
+.menu_item:hover {
+    margin: 0.5cqw 15cqw;
 }
 
 .time {

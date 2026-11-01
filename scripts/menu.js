@@ -5,7 +5,6 @@ let name = document.getElementById("name");
 
 const resizeObserver2 = new ResizeObserver(entries => {
     for (let entry of entries) {
-        console.log('resize fired', entry.contentRect.width, entry.contentRect.height);
         phone.style.width = `${entry.contentRect.width}px`;
         phone.style.height = `${entry.contentRect.height}px`;
         content.style.width = `${entry.contentRect.width}px`;
