@@ -8,7 +8,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/d10eba1199.js" crossorigin="anonymous"></script>
         <script src="scripts/init.js"></script>
         <script src="scripts/home.js" defer></script>
         <script src="scripts/main.js" defer></script>
@@ -52,13 +51,13 @@
         </style>
         <script>
             function openMenu() {
-                if (mapOpened) {
-                    mapContainer.classList.remove('open');
+                if (menuOpened) {
+                    menuContainer.classList.remove('open');
                 }
                 else {
-                    mapContainer.classList.add('open');
+                    menuContainer.classList.add('open');
                 }
-                mapOpened = !mapOpened;
+                menuOpened = !menuOpened;
             }
         </script>
     </head>
@@ -91,10 +90,7 @@
             <div id="menu_content">
                 <br>
                 <div class="profile">
-                    <a onclick="openMenu()" class="profile-item"><i class="fa-solid fa-arrow-left"></i></a>
-                    <a href="toilet.html" class="profile-item" id="name">Khoi Hoang</a>
-                    <a href="balcony.html" class="profile-item"><i class="fa-solid fa-phone"></i></a>
-                    <a href="index.html" class="profile-item"><i class="fa-regular fa-house"></i></a>
+                    <a onclick="openMenu()" class="profile-item"></a>
                 </div>
                 <h3 class="time">12:11</h3>
                 <div class="messages">
@@ -133,7 +129,6 @@
                     </a>
                 </div>
             </div>
-            <img id="phone" alt="phone" src="assets/environment/phone.png" draggable="false"/>
         </div>
     </body>
 </html>

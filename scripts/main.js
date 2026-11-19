@@ -27,7 +27,7 @@ function move(delta) {
     player.x += player.velocityX !== 0 ? Math.sign(player.velocityX) * distance : 0;
     player.y += player.velocityY !== 0 ? Math.sign(player.velocityY) * distance : 0;
 
-    if (mapOpened) {
+    if (menuOpened) {
         player.x = Math.round(player.x / tileSize) * tileSize;
         player.y = Math.round(player.y / tileSize) * tileSize;
         player.velocityX = 0;
@@ -77,8 +77,8 @@ function move(delta) {
 
     for (let map of maps.values()) {
         if (collision(player, map)) {
-            mapContainer.classList.add('open');
-            mapOpened = true;
+            menuContainer.classList.add('open');
+            menuOpened = true;
             player.x = Math.round(player.x / tileSize) * tileSize;
             player.y = Math.round(player.y / tileSize) * tileSize;
             break;
@@ -178,13 +178,13 @@ function applyDirection(direction) {
 
 function openMap(e) {
     if (e.code === "Escape") {
-        if (mapOpened) {
-            mapContainer.classList.remove('open');
+        if (menuOpened) {
+            menuContainer.classList.remove('open');
         }
         else {
-            mapContainer.classList.add('open');
+            menuContainer.classList.add('open');
         }
-        mapOpened = !mapOpened;
+        menuOpened = !menuOpened;
     }
 }
 

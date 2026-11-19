@@ -9,11 +9,11 @@ let context;
 let finalScale
 
 //map
-let mapContainer;
-let mapMenu;
-const mapWidth = 4 * tileSize;
-const mapHeight = 8 * tileSize;
-let mapOpened = false;
+let menuContainer;
+let menu_content;
+const menuWidth = 8 * tileSize;
+const menuHeight = 8 * tileSize;
+let menuOpened = false;
 
 //animations
 let runSouthAnimationFrames = []
@@ -57,10 +57,10 @@ window.onload = function () {
     board.height = boardHeight;
     board.width = boardWidth;
 
-    mapMenu = document.getElementById("menu_content");
-    mapContainer = document.getElementById("menu")
-    mapMenu.height = mapHeight;
-    mapMenu.width = mapWidth;
+    menu_content = document.getElementById("menu_content");
+    menuContainer = document.getElementById("menu")
+    menu_content.height = menuHeight;
+    menu_content.width = menuWidth;
 
     context = board.getContext("2d");
 
@@ -88,8 +88,8 @@ function resizeBoard() {
     board.style.width = boardWidth * finalScale + "px";
     board.style.height = boardHeight * finalScale + "px";
 
-    mapMenu.style.width = mapWidth * finalScale + "px";
-    mapMenu.style.height = mapHeight * finalScale + "px";
+    menu_content.style.width = menuWidth * finalScale + "px";
+    menu_content.style.height = menuHeight * finalScale + "px";
 }
 
 function loadImages() {
