@@ -10,9 +10,6 @@ let finalScale
 
 //map
 let menuContainer;
-let menu_content;
-const menuWidth = 8 * tileSize;
-const menuHeight = 8 * tileSize;
 let menuOpened = false;
 
 //animations
@@ -57,10 +54,7 @@ window.onload = function () {
     board.height = boardHeight;
     board.width = boardWidth;
 
-    menu_content = document.getElementById("menu_content");
     menuContainer = document.getElementById("menu")
-    menu_content.height = menuHeight;
-    menu_content.width = menuWidth;
 
     context = board.getContext("2d");
 
@@ -87,9 +81,6 @@ function resizeBoard() {
 
     board.style.width = boardWidth * finalScale + "px";
     board.style.height = boardHeight * finalScale + "px";
-
-    menu_content.style.width = menuWidth * finalScale + "px";
-    menu_content.style.height = menuHeight * finalScale + "px";
 }
 
 function loadImages() {
