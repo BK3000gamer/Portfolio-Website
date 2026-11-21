@@ -46,10 +46,6 @@ ul {
     padding: 0;
 }
 
-li::marker {
-    content: "✦  "
-}
-
 .highlight {
     color: mediumpurple;
     font-weight: 800;
@@ -116,6 +112,7 @@ li::marker {
     flex-shrink: 0;
     background-color: #e6e6e6;
     overflow: hidden;
+    cursor: move;
 }
 
 .window_title {

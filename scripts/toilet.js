@@ -21,12 +21,16 @@ let canvas = document.getElementById("board");
 let back = document.getElementById("back");
 let bio = document.getElementById("bio");
 let who  = document.getElementById("who");
+let tab_name = document.querySelectorAll(".tab_name");
+let tab_content = document.querySelectorAll(".tab_content");
 
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
         back.style.fontSize = `${entry.contentRect.height/50}px`;
         bio.style.fontSize = `${entry.contentRect.height/75}px`;
         who.style.fontSize = `${entry.contentRect.height/100}px`;
+        tab_name.forEach(el => el.style.fontSize = `${entry.contentRect.height/50}px`);
+        tab_content.forEach(el => el.style.fontSize = `${entry.contentRect.height/50}px`);
     }
 })
 

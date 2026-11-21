@@ -19,7 +19,7 @@
             }
 
             #back {
-                height: 9.09%;
+                height: 9.09% !important;
                 width: 10%;
                 top: 45.45% !important;
                 left: 60%;
@@ -47,7 +47,7 @@
 
             #bio {
                 position: relative;
-                height: 18.18%;
+                height: 18.18% !important;
                 width: 25%;
                 top: 0;
                 left: 25%;
@@ -56,6 +56,112 @@
                 font-weight: normal;
                 line-height: 100%;
                 color: #e6e6e6
+            }
+
+            li::marker {
+                content: "✦  "
+            }
+
+            #eee {
+                position: relative;
+                height: 36.36% !important;
+                width: 40%;
+                top: 9.09% !important;
+                left: 10%;
+                display: flex;
+                container-type: size;
+            }
+
+            input {
+                display: none;
+            }
+
+            .tab_name {
+                color: #e6e6e6;
+                font-family: Montserrat, sans-serif;
+                font-weight: 600;
+                height: 5cqh;
+                width: 33.3cqw;
+                padding: 1cqh;
+                text-align: left;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .tab_name::before {
+                content: '';
+                background-color: #e6e6e6;
+                position: absolute;
+                width: 33.3cqw;;
+                height: 0.5%;
+                bottom: 90%;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.5s;
+            }
+
+            .tab_name:hover::before {
+                transform: scaleX(1);
+            }
+
+            input:checked + label .tab_name::before {
+                transform: scaleX(1);
+            }
+
+            .e {
+                color: mediumpurple;
+            }
+
+            .e::before {
+                content: '';
+                background-color: mediumpurple;
+                position: absolute;
+                width: 2.5%;;
+                height: 0.5%;
+                bottom: 90%;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.0125s;
+            }
+
+            .tab_name:hover .e::before {
+                transform: scaleX(1);
+            }
+
+            input:checked + label .e::before {
+                transform: scaleX(1);
+            }
+
+            .tab_content {
+                position: absolute;
+                top: 12cqh;
+                left: 0;
+                font-family: Montserrat, sans-serif;
+                font-weight: normal;
+                color: #e6e6e6;
+                width: 100%;
+                text-align: left;
+                opacity: 0;
+                z-index: 0;
+                transition: opacity 0.25s;
+            }
+
+            input:checked + label .tab_content {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            dt {
+                text-decoration-line: underline;
+            }
+
+            dd {
+                margin-left: 5%;
+                color: #999999;
+            }
+
+            .time {
+                color: #4d4d4d;
             }
         </style>
         <script>
@@ -93,6 +199,38 @@
                         <li>I am proficient in pixel art, 2D and 3D animations, and can adapt to different art styles.</li><br>
                         <li>I sometimes do cosplay photography as a hobby.</li>
                     </ul>
+                </div>
+                <div id="eee">
+                    <input type="radio" name="options" id="1">
+                    <label for="1">
+                        <div class="tab_name"><span class="e">E</span>ducations</div>
+                        <div class="tab_content">
+                            <dl>
+                               <dt>Bachelor's degree, Animation, Games and Interactivity</dt> <!--Degree-->
+                                <dd>Swinburne University of Technology</dd> <!--School-->
+                                <dd class="time">2024 – 2027</dd> <!--Time-->
+                                <dd>N/A</dd> <!--Description-->
+                            </dl>
+                        </div>
+                    </label>
+                    <input type="radio" name="options" id="2">
+                    <label for="2">
+                        <div class="tab_name"><span class="e">E</span>xperiences</div>
+                        <div class="tab_content">
+                            <dl>
+                                <dt>N/A</dt> <!--Role-->
+                                <dd>N/A</dd> <!--Company-->
+                                <dd class="time">N/A</dd> <!--Time-->
+                                <dd>N/A</dd> <!--Location / Work Schedule-->
+                                <dd>N/A</dd> <!--Description-->
+                            </dl>
+                        </div>
+                    </label>
+                    <input type="radio" name="options" id="3">
+                    <label for="3">
+                        <div class="tab_name"><span class="e">E</span>ndorsements</div>
+                        <div class="tab_content"></div>
+                    </label>
                 </div>
             </div>
         </div>
