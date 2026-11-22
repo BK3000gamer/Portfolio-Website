@@ -67,3 +67,54 @@ function loadMap() {
         door.url = doorUrls[i]
     }
 }
+
+const sections = [{
+    file: '../datas/educations.json',
+    target: '#edu',
+    fields: ['degree', 'school', 'time', 'description']
+}, {
+    file: '../datas/experiences.json',
+    target: '#exp',
+    fields: ['role', 'company', 'time', 'location', 'description']
+},    {
+    file: '../datas/endorsements.json',
+    target: '#end',
+    fields: ['person', 'role', 'time', 'relationship', 'comment']
+}];
+
+function buildDl(item, fields) {
+    const dl = document.createElement('dl');
+
+    fields.forEach((key, i) => {
+        const el = document.createElement(i === 0 ? 'dt' : 'dd');
+        if (key === 'time') el.className = 'time';
+        el.textContent = item[key] ?? 'N/A';
+        dl.appendChild(el);
+    });
+
+    return dl;
+}
+
+async function loadSections() {
+    try {
+        const result = await Promise.all(
+            sections.map(s =>
+                fetch(s.file).then(res => {
+                    if (!res.ok) throw new Error(`${s.file}: ${res.status}`);
+                    return res.json();
+                })
+            )
+        );
+
+        result.forEach((item, i) => {
+            const {target, fields} = sections[i];
+            const container = document.querySelector(target);
+            container.innerHTML = '';
+            item.forEach(item => container.appendChild(buildDl(item, fields)));
+        });
+    } catch (err) {
+        console.error('Failed to load data', err);
+    }
+}
+
+loadSections();
