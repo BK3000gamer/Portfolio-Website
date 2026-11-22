@@ -23,6 +23,8 @@ let bio = document.getElementById("bio");
 let who  = document.getElementById("who");
 let tab_name = document.querySelectorAll(".tab_name");
 let tab_content = document.querySelectorAll(".tab_content");
+let contact = document.getElementById("contact");
+let hire_me = document.getElementById("hire_me");
 
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
@@ -31,6 +33,8 @@ const resizeObserver = new ResizeObserver(entries => {
         who.style.fontSize = `${entry.contentRect.height/100}px`;
         tab_name.forEach(el => el.style.fontSize = `${entry.contentRect.height/50}px`);
         tab_content.forEach(el => el.style.fontSize = `${entry.contentRect.height/50}px`);
+        contact.style.fontSize = `${entry.contentRect.height/50}px`;
+        hire_me.style.fontSize = `${entry.contentRect.height/40}px`;
     }
 })
 
