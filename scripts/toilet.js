@@ -69,15 +69,15 @@ function loadMap() {
 }
 
 const sections = [{
-    file: '/datas/educations.json',
+    file: 'datas/educations.json',
     target: '#edu',
     fields: ['degree', 'school', 'time', 'description']
 }, {
-    file: '/datas/experiences.json',
+    file: 'datas/experiences.json',
     target: '#exp',
     fields: ['role', 'company', 'time', 'location', 'description']
 },    {
-    file: '/datas/endorsements.json',
+    file: 'datas/endorsements.json',
     target: '#end',
     fields: ['person', 'role', 'time', 'relationship', 'comment']
 }];
