@@ -22,17 +22,39 @@ const resizeObserver2 = new ResizeObserver(entries => {
 
 resizeObserver2.observe(canvas);
 
-let z = 1
+let z = 100
 
-window_class.forEach((window_ele) => {
+function bringToFront(win) {
+    z += 10
+    const target = win.closest('.menu') || win;
+    target.style.setProperty('--z-index', z);
+}
+
+function openWindow(id) {
+    const win = document.getElementById(id);
+    if (!win) return;
+    win.classList.add('open');
+    bringToFront(win);
+}
+
+function closeWindow(id) {
+    document.getElementById(id).classList.remove('open');
+}
+
+function toggleWindow(id) {
+    const win = document.getElementById(id);
+    if (!win) return;
+    win.classList.contains('open') ? closeWindow(id) : openWindow(id);
+}
+
+function initWindow(window_ele) {
     const header = window_ele.querySelector('.window_header');
 
-    window_ele.addEventListener('click', () => {
-        z += 10
-        window_ele.style.setProperty('--z-index', `${z}`)
-    });
+    window_ele.addEventListener('mousedown', () => bringToFront(window_ele));
 
     header.addEventListener('mousedown', (event) => {
+        if (event.target.closest('.window_button')) return;
+
         window_ele.classList.add('dragging');
 
         const style = getComputedStyle(window_ele);
@@ -47,16 +69,32 @@ window_class.forEach((window_ele) => {
 
             window_ele.style.left = l + (event.clientX - startX) + 'px';
             window_ele.style.top = t + (event.clientY - startY) + 'px';
-        }
+        };
 
         const mouseup = () => {
             window_ele.classList.remove('dragging');
 
             document.removeEventListener('mousemove', drag);
             document.removeEventListener('mouseup', mouseup);
-        }
+        };
 
         document.addEventListener('mousemove', drag)
         document.addEventListener('mouseup', mouseup);
-    })
-})
+    });
+}
+
+document.querySelectorAll('.window').forEach(initWindow);
+
+document.addEventListener('click', (e) => {
+    const opener = e.target.closest('[data-open]');
+    if (opener) {
+        e.preventDefault();
+        openWindow(opener.dataset.open);
+        return;
+    }
+    const closer = e.target.closest('[data-close]');
+    if (closer) {
+        e.preventDefault();
+        closeWindow(opener.dataset.close);
+    }
+});

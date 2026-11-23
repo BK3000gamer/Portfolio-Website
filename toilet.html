@@ -19,9 +19,9 @@
             }
 
             #back {
-                height: 9.09% !important;
+                height: calc(100%/11);
                 width: 10%;
-                top: 45.45% !important;
+                top: calc((100%/11)*5);
                 left: 55%;
                 text-align: left;
             }
@@ -30,7 +30,7 @@
                 position: relative;
                 height: 0;
                 width: 10%;
-                top: 11.3625% !important;
+                top: calc((20/176)*100%);
                 left: 10%;
                 font-family: Bellefair, serif;
                 color: #e6e6e6;
@@ -39,15 +39,15 @@
 
             #profile {
                 position: relative;
-                height: 18.18%;
+                height: calc((100%/11)*2);
                 width: 10%;
-                top: 18.18% !important;
+                top: calc((100%/11)*2);
                 left: 10%;
             }
 
             #bio {
                 position: relative;
-                height: 18.18% !important;
+                height: calc((100%/11)*2);
                 width: 25%;
                 top: 0;
                 left: 25%;
@@ -64,9 +64,9 @@
 
             #eee {
                 position: relative;
-                height: 36.36% !important;
+                height: calc((100%/11)*4);
                 width: 40%;
-                top: 9.09% !important;
+                top: calc(100%/11);
                 left: 10%;
                 display: flex;
                 container-type: size;
@@ -180,9 +180,9 @@
 
             #skills {
                 position: relative;
-                height: 36.36% !important;
+                height: calc((100%/11)*4);
                 width: 35%;
-                top: -72.72% !important;
+                top: calc((100%/11)*-8);
                 left: 55%;
             }
 
@@ -196,9 +196,9 @@
 
             #contact {
                 position: relative;
-                height: 36.36% !important;
+                height: calc((100%/11)*4);
                 width: 15%;
-                top: -63.63% !important ;
+                top: calc((100%/11)*-7);
                 left: 75%;
                 padding-top: 1%;
                 margin: 0;
@@ -231,17 +231,6 @@
                 color: black;
             }
         </style>
-        <script>
-            function openMenu() {
-                if (menuOpened) {
-                    menuContainer.classList.remove('open');
-                }
-                else {
-                    menuContainer.classList.add('open');
-                }
-                menuOpened = !menuOpened;
-            }
-        </script>
     </head>
     <body>
         <div class="container">
@@ -325,7 +314,7 @@
                     <h2 class="window_title">PROJECTS</h2>
                     <div class="window_buttons">
                         <a href="index.html" class="window_button" style="background-image: url('assets/buttons/home.png');"></a>
-                        <a onclick="openMenu()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
+                        <a onclick="openMenuClick()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
                     </div>
                 </div>
                 <div class="menu_items">
@@ -351,10 +340,10 @@
                         <h2 class="menu_item">Photography</h2>
                     </a>
                     <a href="#">
-                        <h2 class="menu_item">Film Making</h2>
+                        <h2 class="menu_item">Gallery</h2>
                     </a>
-                    <a href="#">
-                        <h2 class="menu_item">Miscellaneous</h2>
+                    <a href="https://bk3000gamer.github.io/Portfolio-Vault/" target="_blank" rel="noopener noreferrer">
+                        <h2 class="menu_item">Vault</h2>
                     </a>
                 </div>
             </div>

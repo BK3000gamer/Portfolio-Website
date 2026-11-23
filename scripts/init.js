@@ -69,7 +69,7 @@ window.onload = function () {
     requestAnimationFrame(update);
     document.addEventListener("keydown", movePlayer);
     document.addEventListener("keyup", stopPlayer);
-    document.addEventListener("keydown", openMap);
+    document.addEventListener("keydown", openMenuKey);
 }
 
 function resizeBoard() {

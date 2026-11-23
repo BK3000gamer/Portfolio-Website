@@ -18,58 +18,47 @@
             }
 
             #intro {
-                height: 18.18%;
+                height: calc((100%/11)*2);
                 width: 50%;
-                top: 9.09% !important;
+                top: calc(100%/11);
                 left: 25%;
                 text-align: justify;
             }
 
             #projects {
-                height: 9.09%;
+                height: calc(100%/11);
                 width: 20%;
-                top: 27.27% !important;
+                top: calc((100%/11)*3);
                 left: 70%;
                 text-align: left;
             }
 
             #contacts {
-                height: 9.09%;
+                height: calc(100%/11);
                 width: 15%;
-                top: 27.27% !important;
+                top: calc((100%/11)*3);
                 left: 20%;
                 text-align: right;
             }
 
             #about {
-                height: 9.09%;
+                height: calc(100%/11);
                 width: 20%;
-                top: 27.27% !important;
+                top: calc((100%/11)*3);
                 left: 55%;
                 text-align: left;
             }
         </style>
-        <script>
-            function openMenu() {
-                if (menuOpened) {
-                    menuContainer.classList.remove('open');
-                }
-                else {
-                    menuContainer.classList.add('open');
-                }
-                menuOpened = !menuOpened;
-            }
-        </script>
     </head>
     <body>
         <div class="container">
             <canvas id="board"></canvas>
             <div id="content">
-                <div class="heading1" id="intro">
+                <div class="heading1" id="intro" style="pointer-events: none;">
                     <h1 class="normal">Hi!!! My name is <span class="highlight"> Khoi Hoang</span>. I am a <span class="highlight">Game Developer</span>, <span class="highlight">Animator</span> and <span class="highlight">Designer</span> based in Melbourne.</h1>
                 </div>
                 <div class="heading1" id="projects">
-                    <a href="#" onclick="openMenu()">
+                    <a href="#" onclick="openMenuClick()">
                         <h1 class="normal">MY <span class="highlight">PROJECTS</span> ARE THIS WAY →</h1>
                     </a>
                 </div>
@@ -92,7 +81,7 @@
                     <h2 class="window_title">PROJECTS</h2>
                     <div class="window_buttons">
                         <a href="index.html" class="window_button" style="background-image: url('assets/buttons/home.png');"></a>
-                        <a onclick="openMenu()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
+                        <a onclick="openMenuClick()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
                     </div>
                 </div>
                 <div class="menu_items">
@@ -118,10 +107,10 @@
                         <h2 class="menu_item">Photography</h2>
                     </a>
                     <a href="#">
-                        <h2 class="menu_item">Film Making</h2>
+                        <h2 class="menu_item">Gallery</h2>
                     </a>
-                    <a href="#">
-                        <h2 class="menu_item">Miscellaneous</h2>
+                    <a href="https://bk3000gamer.github.io/Portfolio-Vault/" target="_blank" rel="noopener noreferrer">
+                        <h2 class="menu_item">Vault</h2>
                     </a>
                 </div>
             </div>

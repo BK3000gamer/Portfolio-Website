@@ -19,10 +19,20 @@ const doorUrls = ['index.html']
 
 let canvas = document.getElementById("board");
 let back = document.getElementById("back");
+let contact_me = document.getElementById("contact_me");
+let form_group = document.querySelectorAll('.form_group');
+let success = document.getElementById("success");
+let error = document.getElementById("error");
 
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
         back.style.fontSize = `${entry.contentRect.height/50}px`;
+        contact_me.style.fontSize = `${entry.contentRect.height/25}px`;
+        form_group.forEach(el => el.style.fontSize = `${entry.contentRect.height/50}px`);
+        success.style.width = `${entry.contentRect.width/5}px`;
+        success.style.height = `${(entry.contentRect.width/20)*3}px`;
+        error.style.width = `${entry.contentRect.width/5}px`;
+        error.style.height = `${(entry.contentRect.width/20)*3}px`;
     }
 })
 
@@ -60,3 +70,27 @@ function loadMap() {
         door.url = doorUrls[i]
     }
 }
+
+const form = document.getElementById("contact_form");
+
+window.addEventListener("pageshow", form.reset());
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+        });
+
+        if (response.ok) {
+            form.reset()
+            openWindow('success');
+        } else {
+            openWindow('error');
+        }
+    } catch (err) {
+        openWindow('error');
+    }
+});

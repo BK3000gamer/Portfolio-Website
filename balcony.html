@@ -19,51 +19,134 @@
             }
 
             #back {
-                height: 9.09%;
+                height: calc(100%/11);
                 width: 10%;
-                top: 54.54% !important;
+                top: calc((100%/11)*6);
                 left: 35%;
                 text-align: left;
             }
 
             #animation {
                 position: relative;
-                height: 36.36% !important;
+                height: calc((100%/11)*4);
                 width: 10%;
                 background: mediumpurple;
                 left: 35%;
                 top: 0;
             }
 
+            #contact_me {
+                position: relative;
+                height: calc(100%/11);
+                width: 40%;
+                top: calc((100%/11)*-4);
+                left: 50%;
+                text-align: left;
+                display: grid;
+                align-items: end;
+                font-family: Bellefair, serif;
+                color: mediumpurple;
+                margin: 0;
+            }
+
+            #contact_me h1 {
+                margin: 0;
+            }
+
             #contact {
                 position: relative;
-                height: 63.43% !important;
+                height: calc((100%/11)*6);
                 width: 40%;
-                background: mediumpurple;
                 left: 50%;
-                top: -36.36% !important;
+                top: calc((100%/11)*-4);
+            }
+
+            #contact_form {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-rows: calc(100%/6) calc(100%/6) calc((100%/6)*3) calc(100%/6);
+                grid-template-columns: 100%;
+            }
+
+            .form_group {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-rows: calc((100%/16)*15);
+            }
+
+            #name_subject_area {
+                grid-template-columns: calc((100%/8)*3) calc((100%/8)*5);
+            }
+
+            #message_area {
+                grid-template-rows: calc((100%/64)*63);
+            }
+
+            .input{
+                box-sizing: border-box;
+                border-radius: 0;
+                background-color: black;
+                border-color: #e6e6e6;
+                border-width: 0.25vh;
+                border-style: solid;
+                color: #e6e6e6;
+                font-family: 'Montserrat', sans-serif;
+                font-size: inherit;
+            }
+
+            .input::placeholder {
+                color: #4d4d4d;
+                font-size: inherit;
+            }
+
+            .input:focus {
+                outline: none;
+                border-color: mediumpurple;
+            }
+
+            #contact input {
+                padding: 1%;
+            }
+
+            #message {
+                padding: 1%;
+                padding-top: 3%;
+            }
+
+            #name {
+                width: calc((100%/48)*47);
+            }
+
+            #submit {
+                background-color: mediumpurple;
+                border: none;
+                border-radius: .5vh;
+                font-family: Montserrat, sans-serif;
+                font-weight: 600;
             }
 
             #social {
                 position: relative;
-                height: 9.09% !important;
+                height: calc(100%/11);
                 width: 60%;
                 background: mediumpurple;
                 left: 30%;
-                top: -27.27% !important;
+                top: calc((100%/11)*-3);
+            }
+
+            #success {
+                left: 40%;
+                top: calc((100%/11)*4);
+                background: mediumpurple;
+            }
+
+            #error {
+                left: 40%;
+                top: calc((100%/11)*4);
+                background: mediumpurple;
             }
         </style>
-        <script>
-            function openMenu() {
-                if (menuOpened) {
-                    menuContainer.classList.remove('open');
-                }
-                else {
-                    menuContainer.classList.add('open');
-                }
-                menuOpened = !menuOpened;
-            }
-        </script>
     </head>
     <body>
         <div class="container">
@@ -75,7 +158,25 @@
                     </a>
                 </div>
                 <div id="animation"></div>
-                <div id="contact"></div>
+                <div id="contact_me">
+                    <h1>CONTACT ME</h1>
+                </div>
+                <div id="contact">
+                    <form novalidate id="contact_form">
+                        <div class="form_group" id="name_subject_area">
+                            <input type="text" class="input" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" class="input" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form_group">
+                            <input type="email" class="input" id="email" name="email" placeholder="Your Email" required></div>
+                        <div class="form_group" id="message_area">
+                            <textarea class="input" id="message" name="message" placeholder="Wassup" required></textarea>
+                        </div>
+                        <div class="form_group">
+                            <input type="submit" id="submit" value="SEND">
+                        </div>
+                    </form>
+                </div>
                 <div id="social"></div>
             </div>
         </div>
@@ -86,7 +187,7 @@
                     <h2 class="window_title">PROJECTS</h2>
                     <div class="window_buttons">
                         <a href="index.html" class="window_button" style="background-image: url('assets/buttons/home.png');"></a>
-                        <a onclick="openMenu()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
+                        <a onclick="openMenuClick()" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
                     </div>
                 </div>
                 <div class="menu_items">
@@ -112,13 +213,33 @@
                         <h2 class="menu_item">Photography</h2>
                     </a>
                     <a href="#">
-                        <h2 class="menu_item">Film Making</h2>
+                        <h2 class="menu_item">Gallery</h2>
                     </a>
-                    <a href="#">
-                        <h2 class="menu_item">Miscellaneous</h2>
+                    <a href="https://bk3000gamer.github.io/Portfolio-Vault/" target="_blank" rel="noopener noreferrer">
+                        <h2 class="menu_item">Vault</h2>
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="window" id="success">
+            <div class="window_header">
+                <h2 class="window_title">Success</h2>
+                <div class="window_buttons">
+                    <a href="index.html" class="window_button" style="background-image: url('assets/buttons/home.png');"></a>
+                    <a onclick="closeWindow('success')" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
+                </div>
+            </div>
+            <div class="window_content"></div>
+        </div>
+        <div class="window" id="error">
+            <div class="window_header">
+                <h2 class="window_title">Error</h2>
+                <div class="window_buttons">
+                    <a href="index.html" class="window_button" style="background-image: url('assets/buttons/home.png');"></a>
+                    <a onclick="closeWindow('error')" class="window_button" style="background-image: url('assets/buttons/close.png');"></a>
+                </div>
+            </div>
+            <div class="window_content"></div>
         </div>
     </body>
 </html>

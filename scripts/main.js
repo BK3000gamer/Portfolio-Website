@@ -102,7 +102,17 @@ function animatePlayer() {
     }
 }
 
+function isTypingTarget(el) {
+    if (!el) return false;
+    return (
+        el.isContentEditable ||
+            ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName)
+    );
+}
+
 function movePlayer(e) {
+    if (isTypingTarget(e.target)) return; // ignore typing
+
     if (e.repeat) return; // ignore OS key-repeat events entirely
 
     if (!movementKeys.includes(e.code)) return;
@@ -176,17 +186,33 @@ function applyDirection(direction) {
     runAnimationIndex = 0;
 }
 
-function openMap(e) {
-    if (e.code === "Escape") {
-        if (menuOpened) {
-            menuContainer.classList.remove('open');
-        }
-        else {
-            menuContainer.classList.add('open');
-        }
-        menuOpened = !menuOpened;
+function setMenu(open) {
+    menuContainer.classList.toggle('open', open);
+    menuOpened = open;
+
+    if (open) {
+        bringToFront(menuContainer);
+    } else {
+        menuContainer.style.removeProperty('--z-index');
     }
 }
+
+function openMenuClick() {
+    setMenu(!menuOpened);
+}
+
+function openMenuKey(e) {
+    if (e.code === "Escape") {
+        setMenu(!menuOpened);
+    }
+}
+
+document.addEventListener('focusin', (e) => {
+    if (isTypingTarget(e.target)) {
+        keysPressed.clear();
+        queuedDirection = 'O';
+    }
+})
 
 class Block {
     constructor(x, y, width, height) {
